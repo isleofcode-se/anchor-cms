@@ -68,7 +68,7 @@ class update
 
         if (in_array(ini_get('allow_url_fopen'), ['true', '1', 'On'])) {
             $context = stream_context_create(['http' => ['timeout' => 2]]);
-            $result  = file_get_contents(static::UPDATE_URL, false, $context);
+            // $result  = file_get_contents(static::UPDATE_URL, false, $context);
         } elseif (function_exists('curl_init')) {
             try {
                 $session = curl_init();
